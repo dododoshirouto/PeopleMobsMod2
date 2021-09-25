@@ -21,6 +21,7 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         
         this.bipedBody.showModel = false;
         this.bipedBodywear.showModel = false;
+        
     }
 
     @Override
