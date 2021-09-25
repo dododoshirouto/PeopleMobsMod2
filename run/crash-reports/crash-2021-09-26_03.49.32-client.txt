@@ -1,0 +1,123 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 21/09/26 3:49
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at net.minecraft.world.World.isOutsideBuildHeight(World.java:148) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.World.getBlockState(World.java:389) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.LivingEntity.getBedDirection(LivingEntity.java:2779) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading}
+	at net.minecraft.client.renderer.entity.EntityRendererManager.func_217781_a(EntityRendererManager.java:298) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.WorldRenderer.func_224745_a(WorldRenderer.java:515) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:654) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.renderWorld(GameRenderer.java:640) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:494) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:890) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:384) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(SourceFile:155) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:55) ~[forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-4.1.0.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:102) [forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.world.World.isOutsideBuildHeight(World.java:148)
+	at net.minecraft.world.World.getBlockState(World.java:389)
+	at net.minecraft.entity.LivingEntity.getBedDirection(LivingEntity.java:2779)
+	at net.minecraft.client.renderer.entity.EntityRendererManager.func_217781_a(EntityRendererManager.java:298)
+	at net.minecraft.client.renderer.WorldRenderer.func_224745_a(WorldRenderer.java:515)
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:654)
+	at net.minecraft.client.renderer.GameRenderer.renderWorld(GameRenderer.java:640)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['Dev'/185, l='MpServer', x=190.26, y=17.00, z=152.25]]
+	Chunk stats: Client Chunk Cache: 729, 484
+	Level dimension: DimensionType{minecraft:overworld}
+	Level name: MpServer
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: {}
+	Level spawn location: World: (178,41,138), Chunk: (at 2,2,10 in 11,8; contains blocks 176,0,128 to 191,255,143), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 50973 game time, 50973 day time
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.fillCrashReport(ClientWorld.java:410)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:1750)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:405)
+	at net.minecraft.client.main.Main.main(SourceFile:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:55)
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81)
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65)
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:102)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.14.4
+	Minecraft Version ID: 1.14.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_211, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 512118808 bytes (488 MB) / 1560281088 bytes (1488 MB) up to 3679977472 bytes (3509 MB)
+	CPUs: 16
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 4.1.0+62+5bfa59b
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-1.0.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-1.0.1-milestone.0.1+94458e7-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 28.2
+	Forge: net.minecraftforge:28.2.0
+	FML Language Providers: 
+		javafml@28.2
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.14.4 DONE}
+		main People Mobs Mod2 {peoplemobsmod2@NONE DONE}
+		forge-1.14.4-28.2.0_mapped_snapshot_20190719-1.14.3.jar Forge {forge@28.2.0 DONE}
+	Launched Version: MOD_DEV
+	LWJGL: 3.2.2 build 10
+	OpenGL: AMD Radeon(TM) Graphics GL version 4.6.13596 Compatibility Profile Context 20.10.20.02 27.20.1020.2002, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 16x AMD Ryzen 9 4900HS with Radeon Graphics 
