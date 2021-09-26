@@ -7,10 +7,10 @@ import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.MathHelper;
+//import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import site.dodoneko.peoplemobsmod2.client.model.PMM2_EndermanModel;
+//import site.dodoneko.peoplemobsmod2.client.model.PMM2_EndermanModel;
 import site.dodoneko.peoplemobsmod2.client.model.PMM2_FoxModel;
 import site.dodoneko.peoplemobsmod2.client.model.PMM2_RendererModel;
 import site.dodoneko.peoplemobsmod2.util.PMM2_Math;
@@ -35,9 +35,9 @@ public class PMM2_FoxHeldItemLayer<T extends FoxEntity> extends LayerRenderer < 
 
             boolean flag1 = entityIn.isChild();
             if (flag1) {
-                GlStateManager.translatef(0.0F, 1F * (1F-model.modelScale) +3F/16F, 0.0F);
+//                GlStateManager.translatef(0.0F, 1F * (1F-model.modelScale) +3F/16F, 0.0F);
 //                GlStateManager.scalef(0.5F * model.modelScale, 0.5F * model.modelScale, 0.5F * model.modelScale);
-//                GlStateManager.translatef(0.0F, 12.0F * model.scaleFactor * model.modelScale, 0.0F);
+                GlStateManager.translatef(0.0F, 12.0F * model.scaleFactor * model.modelScale, 0.0F);
             }
 
             
