@@ -39,3 +39,10 @@ gradlew
 LICENSE.txt
 README.txt
 *.launch
+*.lock
+*.lock
+*.bin
+*.gz
+*.dat
+*.dat_old
+*.mca
