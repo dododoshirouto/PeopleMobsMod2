@@ -20,6 +20,8 @@ for Minecraft 1.14.4 (Forge 28.2.0)
 
 ## About
 
+[![Video ver 0.1.3+α](https://img.youtube.com/vi/FYLCwDNG7ho/0.jpg)](https://www.youtube.com/watch?v=FYLCwDNG7ho)
+
 既存のMobの見た目を女の子にするMODです。
 
 **Mobを増やすMODではありません**
