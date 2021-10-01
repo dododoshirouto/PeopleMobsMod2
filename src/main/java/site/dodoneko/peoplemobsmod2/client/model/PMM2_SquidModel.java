@@ -23,13 +23,14 @@ public class PMM2_SquidModel<T extends SquidEntity> extends PMM2_BipedModel<T>
         this.modelScale = 0.8F;
         this.boobHeight = 0.2F;
         this.doWalkBounding = false;
+        this.boobsSwing = false;
     }
 
     @Override
     public void render(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         GlStateManager.pushMatrix();
-        // •\Ž¦ˆÊ’u‚ª‚¨‚©‚µ‚¢
-        GlStateManager.translatef(0f, 0.8f, 0f);
+        
+        GlStateManager.translatef(0f, 0.8f, -0.8f);
         super.render(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         GlStateManager.popMatrix();
     }
@@ -38,7 +39,6 @@ public class PMM2_SquidModel<T extends SquidEntity> extends PMM2_BipedModel<T>
     protected void setSwimmingAnimations()
     {
         float f1 = Math.min(1F, (float)Math.sqrt( Math.pow(entityIn.posX-entityIn.lastTickPosX,2)+Math.pow(entityIn.posY-entityIn.lastTickPosY,2)+Math.pow(entityIn.posZ-entityIn.lastTickPosZ,2) )*100F);
-//        float f1 = 1f-(entityIn.squidPitch/3.14F);
         this.bipedRightLeg.rotateAngleX = MathHelper.cos(this.ageInTicks * 0.6F) * -0.5F + 0.2F + 0.4F*(1-f1);
         this.bipedLeftLeg .rotateAngleX = MathHelper.cos(this.ageInTicks * 0.6F + PMM2_Math.PI) * -0.5F + 0.2F + 0.4F*(1-f1);
         this.bipedRightLeg.rotateAngleZ =  0.05F;

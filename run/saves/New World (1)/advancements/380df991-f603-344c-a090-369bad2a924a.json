@@ -155,6 +155,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2021-10-02 01:20:25 +0900"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/stone_slab_from_stone_stonecutting": {
     "criteria": {
       "has_stone": "2021-09-26 03:33:49 +0900"
@@ -188,6 +194,12 @@
   "minecraft:recipes/building_blocks/white_stained_glass": {
     "criteria": {
       "has_glass": "2021-09-26 08:17:05 +0900"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2021-10-02 01:20:25 +0900"
     },
     "done": true
   },
@@ -257,6 +269,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2021-10-02 01:20:25 +0900"
+    },
+    "done": true
+  },
   "minecraft:recipes/misc/bowl": {
     "criteria": {
       "has_red_mushroom": "2021-09-26 03:34:10 +0900"
@@ -266,6 +284,12 @@
   "minecraft:recipes/building_blocks/green_stained_glass": {
     "criteria": {
       "has_glass": "2021-09-26 08:17:05 +0900"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2021-10-02 01:20:25 +0900"
     },
     "done": true
   },
@@ -302,6 +326,12 @@
   "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_stonecutting": {
     "criteria": {
       "has_stone": "2021-09-26 03:33:49 +0900"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2021-10-02 01:20:25 +0900"
     },
     "done": true
   },
@@ -422,6 +452,12 @@
   "minecraft:recipes/redstone/stone_button": {
     "criteria": {
       "has_stone": "2021-09-26 03:33:49 +0900"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2021-10-02 01:20:25 +0900"
     },
     "done": true
   },

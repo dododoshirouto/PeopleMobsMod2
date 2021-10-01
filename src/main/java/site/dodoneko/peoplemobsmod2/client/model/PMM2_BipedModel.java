@@ -525,7 +525,6 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         }
         
         if (this.boobsSwing) {
-        	// TODO: this.bipedBody.rotationPointY ‚ð this.bipedBody.initRotationPointY ‚ÅŒvŽZ‚·‚é
 	        this.bipedUpperBoob.rotationPointY +=
 	                Math.max(
 	                    Math.min(
