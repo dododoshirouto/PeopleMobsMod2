@@ -380,11 +380,6 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         if (this.limbSwingAmount > 0.01F)
         {
             this.setWalkingAnimations();
-            if (this.doWalkBounding)
-            {
-                this.bipedBody.rotationPointY += MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * this.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * (this.isChild? 0.5F: 1F) * this.scaleFactor;
-                this.bipedHead.rotationPointY += MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * this.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * (this.isChild? 0.5F: 1F) * this.scaleFactor;
-            }
         }
 
         // 乗ってる時のモーション
@@ -691,6 +686,12 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftLeg .rotateAngleX = MathHelper.cos(this.limbSwing * 1.3324F + (float)Math.PI) * 1.4F * this.limbSwingAmount;
         this.bipedRightLeg.rotationPointZ = MathHelper.sin(this.limbSwing * 1.3324F) * 1F * this.limbSwingAmount + 1F * this.limbSwingAmount;
         this.bipedLeftLeg .rotationPointZ = MathHelper.sin(this.limbSwing * 1.3324F + (float)Math.PI) * 1F * this.limbSwingAmount + 1F * this.limbSwingAmount;
+
+        if (this.doWalkBounding)
+        {
+            this.bipedBody.rotationPointY += MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * this.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * (this.isChild? 0.5F: 1F) * this.scaleFactor;
+            this.bipedHead.rotationPointY += MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * this.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * (this.isChild? 0.5F: 1F) * this.scaleFactor;
+        }
     }
 
     /** 何かに乗ってる時のモーション */

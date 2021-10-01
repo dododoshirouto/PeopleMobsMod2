@@ -19,9 +19,6 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         this.boobHeight = 0.55F;
         this.walkSpeed = 0.5F;
         
-        this.bipedBody.showModel = false;
-        this.bipedBodywear.showModel = false;
-        
     }
 
     @Override
