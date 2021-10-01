@@ -21,7 +21,7 @@ public class PMM2_SquidModel<T extends SquidEntity> extends PMM2_BipedModel<T>
     {
         super();
         this.modelScale = 0.8F;
-        this.boobHeight = 0.2F;
+        this.boobHeight = 0.3F;
         this.doWalkBounding = false;
         this.boobsSwing = false;
     }

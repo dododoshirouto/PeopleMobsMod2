@@ -517,11 +517,11 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
     	
         if (this.bipedUpperBoob.initRotateAngleX == 0.0F)
         {
-            this.bipedUpperBoob.initRotationPointY = this.boobHeight;
-            this.bipedUpperBoob.initRotateAngleX = -(float)Math.asin((double)this.boobHeight * 0.707106781F) + 1.570796326F;
+            this.bipedUpperBoob.initRotationPointY = this.bipedUpperBoob.rotationPointY = this.boobHeight;
+            this.bipedUpperBoob.initRotateAngleX = this.bipedUpperBoob.rotateAngleX = -(float)Math.asin((double)this.boobHeight * 0.707106781F) + 1.570796326F;
             float f = this.boobHeight;
             if (this.boobHeight > 0.5F) f = 1.0F - f;
-            this.bipedLowerBoob.initRotateAngleX = -(this.bipedUpperBoob.rotateAngleX - PMM2_Math.PI_Half) * (2 + f);
+            this.bipedLowerBoob.initRotateAngleX = this.bipedLowerBoob.rotateAngleX = -(this.bipedUpperBoob.rotateAngleX - PMM2_Math.PI_Half) * (2 + f);
         }
         
         if (this.boobsSwing) {
@@ -541,11 +541,11 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 	                    ),
 	                    0.05F * Math.PI
 	                );
-        }
 
-        float f = this.boobHeight;
-        if (this.boobHeight > 0.5F) f = 1.0F - f;
-        this.bipedLowerBoob.rotateAngleX = -(this.bipedUpperBoob.rotateAngleX - PMM2_Math.PI_Half) * (2 + f);
+	        float f = this.boobHeight;
+	        if (this.boobHeight > 0.5F) f = 1.0F - f;
+	        this.bipedLowerBoob.rotateAngleX = -(this.bipedUpperBoob.rotateAngleX - PMM2_Math.PI_Half) * (2 + f);
+        }
 
     }
 
