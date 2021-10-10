@@ -5,7 +5,7 @@ for Minecraft 1.14.4 (Forge 28.2.0)
 ## ↓↓ 導入方法 ↓↓
 
 1. Minecraft 1.14.4 Forge 28.1をインストールし、一度起動します。
-1. [Lastest Release](https://github.com/dododoshirouto/PeopleMobsMod2/releases/latest)ページに移動します。
+1. [Latest Release](https://github.com/dododoshirouto/PeopleMobsMod2/releases/latest)ページに移動します。
 2. ページ下部の**Assets**内の`peoplemobsmod2-＃.＃.##.jar`をクリックしてダウンロードします。
 3. .jarファイルをMinecraftをプレイするためのフォルダーに移動します。 (デフォルトは `％AppData％\.minecraft`です)
 4. 起動したMinecraftのModリストに`People Mobs Mod2`が表示されている場合は、インストールが完了しています。
