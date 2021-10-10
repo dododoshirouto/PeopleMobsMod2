@@ -13,7 +13,7 @@ for Minecraft 1.14.4 (Forge 28.2.0)
 ## ↓↓ How to Install ↓↓
 
 1. Install [Minecraft 1.14.4 Forge 28.2.0](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.14.4.html) and launch once.
-1. Go to [Latest Release](https://github.com/dododoshirouto/PeopleMobsMod2/releases/lastest) Page.
+1. Go to [Latest Release](https://github.com/dododoshirouto/PeopleMobsMod2/releases/latest) Page.
 2. Click `peoplemobsmod2-#.#.##.jar` to Download, in **Assets** list on bottom of the page.
 3. Move the .jar file to the folder for play Minecraft. (Default is `%AppData%\.minecraft`)
 4. If you see `People Mobs Mod2` in Mods list in launched Minecraft, you are complete installation. 
