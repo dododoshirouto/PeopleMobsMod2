@@ -370,62 +370,63 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
             return;
         }
 
-        // “ª‚Ì‰ñ“]
+        // é ­ã®å›è»¢
         this.setHeadYawAndPitch();
 
-        // ‰½‚à‚µ‚Ä‚È‚¢‚Æ‚«‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ä½•ã‚‚ã—ã¦ãªã„ã¨ãã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         this.setStayAnimations();
 
-        // •à‚¢‚Ä‚é‚Æ‚«‚Ìƒ‚[ƒVƒ‡ƒ“
+        // æ­©ã„ã¦ã‚‹ã¨ãã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if (this.limbSwingAmount > 0.01F)
         {
             this.setWalkingAnimations();
         }
 
-        // æ‚Á‚Ä‚é‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ä¹—ã£ã¦ã‚‹æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if (this.isSitting)
         {
             this.setRidingAnimations();
         }
 
-        // è‚É‰½‚©‚Á‚Ä‚é‚Æ‚«
+        // æ‰‹ã«ä½•ã‹æŒã£ã¦ã‚‹ã¨ã
         this.setHasAnythingAnimations(this.leftArmPose, this.rightArmPose);
 
-        // ’@‚­‚Ìƒ‚[ƒVƒ‡ƒ“
+        // å©ãæ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if (this.swingProgress > 0.0F)
         {
             this.setSwingProgressAnimations();
         }
 
-        // ƒXƒj[ƒN‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ã‚¹ãƒ‹ãƒ¼ã‚¯æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if ( ((LivingEntity) this.entityIn).getPose()==Pose.SNEAKING )
         {
             this.setSneakAnimations();
         }
 
         // Not work.
-        // ”ÉB‰Â”\‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ç¹æ®–å¯èƒ½æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if (this.entityIn instanceof AnimalEntity) {
             if (((AnimalEntity) this.entityIn).isInLove()) {
+            	System.out.println("entity is loving");
                 setLoveAnimations();
             }
         }
 
-        // ƒvƒŒƒCƒ„[‚É”—‚Á‚Ä‚­‚é‚Æ‚«‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«è¿«ã£ã¦ãã‚‹ã¨ãã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if (this.isAggressive) {
             setAggressiveAnimations();
         }
 
-        // ƒ_ƒ[ƒW‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ãƒ€ãƒ¡ãƒ¼ã‚¸æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if (this.entityHurtTime > 1)
         {
             this.setDamagedAnimations();
         }
 
-        // ‹ó’†‚É‚¢‚é‚Ì‚Ìƒ‚[ƒVƒ‡ƒ“
+        // ç©ºä¸­ã«ã„ã‚‹ã®æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         else if (!this.entityOnGround)
         {
-            // …’†‚É‚¢‚é‚Æ‚«
+            // æ°´ä¸­ã«ã„ã‚‹ã¨ã
             if (this.entityIsInWater)
             {
                 this.setSwimmingAnimations();
@@ -437,7 +438,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 
         this.setAddAnimations();
 
-        // €–S‚Ìƒ‚[ƒVƒ‡ƒ“
+        // æ­»äº¡æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
         if ( ((LivingEntity) this.entityIn).getPose()==Pose.DYING ) {
             setDeadAnimations();
         }
@@ -450,7 +451,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.setPostAnimations();
 
 
-        // ‘«‚ÌŠp“x‚É‚æ‚éÚ‘±•”‚Ì®‡«
+        // è¶³ã®è§’åº¦ã«ã‚ˆã‚‹æ¥ç¶šéƒ¨ã®æ•´åˆæ€§
         float gapLY = 0.0F, gapRY = 0.0F;
         if (this.bipedLeftLeg.rotateAngleX < 0.0F)
         {
@@ -481,14 +482,14 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 
 
 
-    /** “ª‚Ì‰ñ“] */
+    /** é ­ã®å›è»¢ */
     protected void setHeadYawAndPitch()
     {
         this.bipedHead.rotateAngleY = this.netHeadYaw * PMM2_Math.Deg2Rad;
         this.bipedHead.rotateAngleX = this.headPitch * PMM2_Math.Deg2Rad;
     }
 
-    /** ‚µ‚Á‚Û‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ */
+    /** ã—ã£ã½ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setShippoAnimations()
     {
         if (this.shippoSwing) {
@@ -497,7 +498,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         }
     }
 
-    /** ‚ ‚Ù‚°‚Æ‚¯‚à‚İ‚İ‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ */
+    /** ã‚ã»ã’ã¨ã‘ã‚‚ã¿ã¿ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setAhogeAnimations()
     {
         float f1 = -0.6F * (float)this.entityIn.getMotion().length()*10F;
@@ -506,7 +507,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         if (this.kemomimiSwing) this.bipedKemomimi.rotateAngleX = f1 * 0.65F;
     }
 
-    /** ‚¨‚Á‚Ï‚¢•”•ª‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ */
+    /** ãŠã£ã±ã„éƒ¨åˆ†ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setBoobsAnimations()
     {
     	
@@ -544,7 +545,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 
     }
 
-    /** ‚Ü‚Î‚½‚« */
+    /** ã¾ã°ãŸã */
     protected void setTwinkleAnimations()
     {
         if (!this.twinklesTimes.containsKey(entityId))
@@ -588,7 +589,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 
     }
 
-    /** ‰½‚à‚µ‚Ä‚È‚¢‚Æ‚«‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** ä½•ã‚‚ã—ã¦ãªã„ã¨ãã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setStayAnimations()
     {
         this.bipedRightArm.rotateAngleZ = MathHelper.cos(this.ageInTicks * 0.09F) * 0.05F + 0.05F;
@@ -597,7 +598,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftArm.rotateAngleX  = -MathHelper.sin(this.ageInTicks * 0.067F) * 0.05F;
     }
 
-    /** …’†‚É‚¢‚é‚Æ‚«‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** æ°´ä¸­ã«ã„ã‚‹ã¨ãã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setSwimmingAnimations()
     {
         float f1 = (float)this.entityIn.getMotion().length();
@@ -616,7 +617,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
     }
 
     // Not Work.
-    /** ”ÉBó‘Ô‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** ç¹æ®–çŠ¶æ…‹æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setLoveAnimations() {
         this.bipedRightArm.rotateAngleZ = -15f * PMM2_Math.Deg2Rad;
         this.bipedLeftArm.rotateAngleZ  =  15f * PMM2_Math.Deg2Rad;
@@ -644,7 +645,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftEyelid.rotationPointY = this.bipedRightEyelid.rotationPointY = 0F;
     }
 
-    /** onGround‚¶‚á‚È‚¢‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** onGroundã˜ã‚ƒãªã„æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setJumpAnimations()
     {
         float fallingSpeed = MathHelper.clamp((float)this.entityMotion.y, -1.0F, 1.0F);
@@ -656,7 +657,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedRightLeg.rotateAngleX = fallingSpeed * 1.3F;
     }
 
-    /** ƒ_ƒ[ƒWó‚¯‚½‚ÌƒAƒjƒ[ƒVƒ‡ƒ“  */
+    /** ãƒ€ãƒ¡ãƒ¼ã‚¸å—ã‘ãŸæ™‚ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³  */
     protected void setDamagedAnimations()
     {
         this.setWalkingAnimations();
@@ -669,9 +670,10 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedRightArm.rotateAngleY += 80F * PMM2_Math.Deg2Rad;
     }
 
-    /** •à‚¢‚Ä‚é‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** æ­©ã„ã¦ã‚‹æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setWalkingAnimations()
     {
+    	// if (speed < 0.5) {
         this.bipedRightArm.rotateAngleY = 0.5F * this.limbSwingAmount;
         this.bipedLeftArm .rotateAngleY = -0.5F * this.limbSwingAmount;
         this.bipedRightArm.rotateAngleX = MathHelper.cos(this.limbSwing * 1.3324F + (float)Math.PI) * 2.0F * this.limbSwingAmount * 0.5F;
@@ -686,6 +688,10 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftLeg .rotateAngleX = MathHelper.cos(this.limbSwing * 1.3324F + (float)Math.PI) * 1.4F * this.limbSwingAmount;
         this.bipedRightLeg.rotationPointZ = MathHelper.sin(this.limbSwing * 1.3324F) * 1F * this.limbSwingAmount + 1F * this.limbSwingAmount;
         this.bipedLeftLeg .rotationPointZ = MathHelper.sin(this.limbSwing * 1.3324F + (float)Math.PI) * 1F * this.limbSwingAmount + 1F * this.limbSwingAmount;
+        
+        // } else { // running
+        
+        // }
 
         if (this.doWalkBounding)
         {
@@ -694,7 +700,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         }
     }
 
-    /** ‰½‚©‚Éæ‚Á‚Ä‚é‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** ä½•ã‹ã«ä¹—ã£ã¦ã‚‹æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setRidingAnimations()
     {
         this.bipedRightArm.rotateAngleX = -((float)Math.PI / 5F);
@@ -707,7 +713,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftLeg.rotateAngleZ = -0.07853982F;
     }
 
-    /** è‚É‰½‚©‚Á‚Ä‚é‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ */
+    /** æ‰‹ã«ä½•ã‹æŒã£ã¦ã‚‹æ™‚ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setHasAnythingAnimations(ArmPose leftArmPose, ArmPose rightArmPose)
     {
         switch (leftArmPose)
@@ -769,7 +775,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         }
     }
 
-    /** ’@‚­‚Æ‚«‚Ìƒ‚[ƒVƒ‡ƒ“*/
+    /** å©ãã¨ãã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³*/
     protected void setSwingProgressAnimations()
     {
         HandSide enumhandside = this.GetHandSide((T)this.entityIn);
@@ -800,7 +806,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         modelrenderer.rotateAngleZ += MathHelper.sin(this.swingProgress * (float)Math.PI) * -0.4F;
     }
 
-    /** ƒXƒj[ƒN‚Ìƒ‚[ƒVƒ‡ƒ“ */
+    /** ã‚¹ãƒ‹ãƒ¼ã‚¯æ™‚ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ */
     protected void setSneakAnimations()
     {
         this.bipedBody.rotateAngleX += 0.5F;
@@ -858,6 +864,16 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 
     protected void setPostAnimations()
     {
+    }
+    
+    
+    
+    /**
+     *  this animation do only setting pose.
+     */
+    protected void setSittingAnimatinos()
+    {
+    	
     }
 
 

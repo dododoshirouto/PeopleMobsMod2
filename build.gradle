@@ -27,7 +27,7 @@ minecraft {
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'snapshot', version: '20190719-1.14.3'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
+
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
@@ -116,7 +116,7 @@ jar {
     manifest {
         attributes([
             "Specification-Title": "People Mobs Mod2",
-            "Specification-Vendor": "�ǂǂǑf�l",
+            "Specification-Vendor": "�ǂǂǑf�l",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
@@ -147,3 +147,4 @@ publishing {
         }
     }
 }
+tasks.withType(Jar) {compileJava.options.encoding = 'UTF-8'}

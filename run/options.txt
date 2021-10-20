@@ -1,5 +1,5 @@
 version:1976
-autoJump:true
+autoJump:false
 autoSuggestions:true
 chatColors:true
 chatLinks:true
@@ -17,7 +17,7 @@ touchscreen:false
 fullscreen:false
 bobView:true
 mouseSensitivity:0.5
-fov:0.0
+fov:1.0
 gamma:1.0
 renderDistance:12
 guiScale:0
