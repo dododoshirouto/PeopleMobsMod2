@@ -39,21 +39,21 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         else if (this.entityIn.isSleeping()) {
         	System.out.println("fox is sleeping");
         	// 仮りのモーション
-            this.setSneakAnimations();
+            this.setSittingAnimations();
         }
         else if (this.entityIn.isSitting()) {
-        	System.out.println("fox is sitting");
-        	// 仮りのモーション
-            this.setSneakAnimations();
+//        	System.out.println("fox is sitting");
+            this.setSittingAnimations();
         }
         else if (this.entityIn.func_213472_dX()) {
         	System.out.println("fox is Fitting on snow");
         }
         else if (this.entityIn.func_213480_dY()) {
         	System.out.println("fox is jumping");
+        	System.out.println("motionY: " + this.entityMotion.y); // 6.4 .. -5.6
         }
         else if (this.entityIn.func_213490_ee()) {
-        	System.out.println("fox is jumping ?");
+//        	System.out.println("fox is jumping ?");
         }
         else if (this.entityIn.func_213467_eg()) {
         	System.out.println("fox is ready to jump");
@@ -64,14 +64,13 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
     }
 
     @Override
-    public void setPostAnimations() {
+    public boolean setPreAnimations() {
         if (this.entityIn.isCrouching() && this.entityIn.onGround) {
             // かがんで地面のにおいを追跡
             this.bipedLeftEyelid.rotationPointZ = this.bipedRightEyelid.rotationPointZ = 0F;
             this.bipedLeftEyelid.rotationPointY = this.bipedRightEyelid.rotationPointY = 0F;
         }
         else if (this.entityIn.isSleeping()) {
-        	// 仮りのモーション
             this.bipedLeftEyelid.rotationPointZ = this.bipedRightEyelid.rotationPointZ = 0F;
             this.bipedLeftEyelid.rotationPointY = this.bipedRightEyelid.rotationPointY = 0F;
         }
@@ -87,5 +86,7 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         	// 仮りのモーション
             this.bipedBody.rotateAngleY = MathHelper.sin(this.ageInTicks*1F) * 0.42F;
         }
+        
+        return false;
     }
 }

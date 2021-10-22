@@ -812,8 +812,8 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedBody.rotateAngleX += 0.5F;
         this.bipedRightArm.rotateAngleX += 0.2F;
         this.bipedLeftArm.rotateAngleX += 0.2F;
-        this.bipedRightArm.rotateAngleZ += 0.1F;
-        this.bipedLeftArm.rotateAngleZ -= 0.1F;
+        this.bipedRightArm.rotateAngleZ += 0.2F;
+        this.bipedLeftArm.rotateAngleZ -= 0.2F;
         this.bipedRightLeg.rotateAngleX -= 0.75F;
         this.bipedLeftLeg.rotateAngleX -= 0.75F;
         this.bipedHead.rotationPointY += 3.0F;
@@ -875,6 +875,30 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
     {
     	
     }
+    
+    
+    
+    
+    // アニメーションプリセット
+    // 各Modelクラスから呼び出して使う。
+    
+    protected void setSittingAnimations() {
+        this.bipedBody.rotateAngleX += 0.3F;
+        this.bipedRightArm.rotateAngleY -= 60F * PMM2_Math.Deg2Rad;
+        this.bipedLeftArm.rotateAngleY += 60F * PMM2_Math.Deg2Rad;
+        this.bipedRightArm.rotateAngleX -= 0.25F;
+        this.bipedLeftArm.rotateAngleX -= 0.25F;
+        this.bipedRightArm.rotateAngleZ -= 0.18F;
+        this.bipedLeftArm.rotateAngleZ += 0.18F;
+        this.bipedRightLeg.rotateAngleY += 30F * PMM2_Math.Deg2Rad;
+        this.bipedLeftLeg.rotateAngleY -= 30F * PMM2_Math.Deg2Rad;
+        this.bipedRightLeg.rotateAngleX -= 80F * PMM2_Math.Deg2Rad;
+        this.bipedLeftLeg.rotateAngleX -= 80F * PMM2_Math.Deg2Rad;
+        this.bipedHead.rotationPointY += 5F;
+        this.bipedBody.rotationPointY += 5F;
+        this.bipedShippo.rotateAngleX += 0.2F;
+    }
+    
 
 
 

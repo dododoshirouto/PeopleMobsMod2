@@ -17,7 +17,7 @@ touchscreen:false
 fullscreen:false
 bobView:true
 mouseSensitivity:0.5
-fov:1.0
+fov:0.0
 gamma:1.0
 renderDistance:12
 guiScale:0
@@ -36,6 +36,7 @@ chatVisibility:0
 chatOpacity:1.0
 textBackgroundOpacity:0.5
 backgroundForChatOnly:true
+fullscreenResolution:1920x1080@60:24
 hideServerAddress:false
 advancedItemTooltips:true
 pauseOnLostFocus:false
