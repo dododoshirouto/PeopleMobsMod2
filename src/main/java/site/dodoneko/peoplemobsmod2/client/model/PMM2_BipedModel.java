@@ -365,6 +365,9 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
             if (renderer.getClass() == PMM2_RendererModel.class)
             ((PMM2_RendererModel)renderer).reset();
         }
+        
+        this.bipedBody.rotateAngleX = 0;
+        this.bipedHead.rotateAngleX = 0;
 
         if ( setPreAnimations() ) {
             return;
@@ -882,6 +885,9 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
     // アニメーションプリセット
     // 各Modelクラスから呼び出して使う。
     
+    /**
+     * 座りモーション（任意呼び出し）
+     */
     protected void setSittingAnimations() {
         this.bipedBody.rotateAngleX += 0.3F;
         this.bipedRightArm.rotateAngleY -= 60F * PMM2_Math.Deg2Rad;
@@ -896,7 +902,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftLeg.rotateAngleX -= 80F * PMM2_Math.Deg2Rad;
         this.bipedHead.rotationPointY += 5F;
         this.bipedBody.rotationPointY += 5F;
-        this.bipedShippo.rotateAngleX += 0.2F;
+        this.bipedShippo.rotateAngleX += 1F;
     }
     
 

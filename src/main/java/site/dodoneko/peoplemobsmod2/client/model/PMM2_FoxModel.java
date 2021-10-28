@@ -47,10 +47,36 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         }
         else if (this.entityIn.func_213472_dX()) {
         	System.out.println("fox is Fitting on snow");
+
+            float fallingSpeed = 1F;
+            this.bipedLeftArm.rotateAngleZ  = -(80F - 30F*fallingSpeed) * PMM2_Math.Deg2Rad;
+            this.bipedRightArm.rotateAngleZ =  (80F - 30F*fallingSpeed) * PMM2_Math.Deg2Rad;
+            this.bipedLeftLeg.rotateAngleY = -fallingSpeed / 1.5F;
+            this.bipedLeftLeg.rotateAngleY =  fallingSpeed / 1.5F;
+            this.bipedLeftLeg.rotateAngleX  = fallingSpeed * 1.3F;
+            this.bipedRightLeg.rotateAngleX = fallingSpeed * 1.3F;
+            
+            float moveYRate = PMM2_Math.clamp( 1F - ((float)this.entityMotion.y + 0.5F) / (0.5F + 0.5F) , 0, 1);
+            
+            this.bipedBody.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
+            this.bipedHead.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
         }
         else if (this.entityIn.func_213480_dY()) {
         	System.out.println("fox is jumping");
-        	System.out.println("motionY: " + this.entityMotion.y); // 6.4 .. -5.6
+//        	System.out.println("motionY: " + this.entityMotion.y); // 6.4 .. -5.6
+
+            float fallingSpeed = MathHelper.clamp((float)this.entityMotion.y, -1.0F, 1.0F);
+            this.bipedLeftArm.rotateAngleZ  = -(80F - 30F*fallingSpeed) * PMM2_Math.Deg2Rad;
+            this.bipedRightArm.rotateAngleZ =  (80F - 30F*fallingSpeed) * PMM2_Math.Deg2Rad;
+            this.bipedLeftLeg.rotateAngleY = -fallingSpeed / 1.5F;
+            this.bipedLeftLeg.rotateAngleY =  fallingSpeed / 1.5F;
+            this.bipedLeftLeg.rotateAngleX  = fallingSpeed * 1.3F;
+            this.bipedRightLeg.rotateAngleX = fallingSpeed * 1.3F;
+            
+            float moveYRate = PMM2_Math.clamp( 1F - ((float)this.entityMotion.y + 0.5F) / (0.5F + 0.5F) , 0, 1);
+            
+            this.bipedBody.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
+            this.bipedHead.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
         }
         else if (this.entityIn.func_213490_ee()) {
 //        	System.out.println("fox is jumping ?");
