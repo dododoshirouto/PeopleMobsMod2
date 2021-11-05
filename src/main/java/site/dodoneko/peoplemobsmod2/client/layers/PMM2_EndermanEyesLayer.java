@@ -38,7 +38,8 @@ public class PMM2_EndermanEyesLayer<T extends EndermanEntity> extends LayerRende
        GLX.glMultiTexCoord2f(GLX.GL_TEXTURE1, 61680.0F, 0.0F);
        GlStateManager.enableLighting();
        GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-       GameRenderer gamerenderer = Minecraft.getInstance().gameRenderer;
+       @SuppressWarnings("resource")
+	GameRenderer gamerenderer = Minecraft.getInstance().gameRenderer;
        PMM2_EndermanModel<T> model = renderer.getEntityModel();
 //       renderer.getEntityModel().CopyAll(model);
 //       renderer.getEntityModel().render(entityIn, p_212842_2_, p_212842_3_, p_212842_5_, p_212842_6_, p_212842_7_, p_212842_8_);

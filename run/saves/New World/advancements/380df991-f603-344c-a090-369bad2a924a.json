@@ -29,6 +29,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2021-11-05 18:11:06 +0900"
+    },
+    "done": true
+  },
   "minecraft:husbandry/bred_all_animals": {
     "criteria": {
       "minecraft:fox": "2021-10-02 04:26:25 +0900"
@@ -68,6 +74,12 @@
   "minecraft:adventure/root": {
     "criteria": {
       "killed_something": "2021-10-02 04:20:38 +0900"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/creeper_banner_pattern": {
+    "criteria": {
+      "has_creeper_head": "2021-11-05 17:50:57 +0900"
     },
     "done": true
   },

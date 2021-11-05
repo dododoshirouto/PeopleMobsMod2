@@ -9,9 +9,9 @@ package site.dodoneko.peoplemobsmod2;
  * Y positive: Model Top
  * Z positive: Model Forward
  *
- * ÅbY
- * ÅbÅ^ Z
- * Å[Å[Å[Å[Å[X
+ * ÔøΩbY
+ * ÔøΩbÔøΩ^ Z
+ * ÔøΩ[ÔøΩ[ÔøΩ[ÔøΩ[ÔøΩ[X
  *
  * Rotation
  * X positive: y to z
@@ -28,28 +28,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.CreeperEntity;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.monster.WitherSkeletonEntity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.passive.BatEntity;
-import net.minecraft.entity.passive.ChickenEntity;
-import net.minecraft.entity.passive.FoxEntity;
-import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.entity.monster.*;
+import net.minecraft.entity.passive.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_BatRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_ChickenRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_CreeperRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_EndermanRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_FoxRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_SkeletonRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_SquidRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_WitherSkeletonRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_ZombieRenderer;
+import site.dodoneko.peoplemobsmod2.client.renderer.*;
 
 import com.google.common.collect.Maps;
 
@@ -81,6 +66,14 @@ public class PeopleMobsMod2
         this.register(BatEntity.class, new PMM2_BatRenderer<>(renderManager));
         this.register(SquidEntity.class, new PMM2_SquidRenderer<>(renderManager));
         this.register(FoxEntity.class, new PMM2_FoxRenderer<>(renderManager));
+        
+        boolean DEBUG = true;
+        if( !DEBUG ) return;
+        
+        this.register(SpiderEntity.class, new PMM2_SpiderRenderer<SpiderEntity>(renderManager));
+        this.register(CaveSpiderEntity.class, new PMM2_CaveSpiderRenderer<CaveSpiderEntity>(renderManager));
+        this.register(CowEntity.class, new PMM2_CowRenderer<CowEntity>(renderManager));
+        this.register(PigEntity.class, new PMM2_PigRenderer<PigEntity>(renderManager));
     }
 
 

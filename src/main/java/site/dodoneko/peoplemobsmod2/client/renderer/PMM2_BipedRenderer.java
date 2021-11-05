@@ -16,7 +16,7 @@ import site.dodoneko.peoplemobsmod2.client.model.PMM2_BipedModel;
 @OnlyIn(Dist.CLIENT)
 public class PMM2_BipedRenderer<T extends MobEntity, M extends PMM2_BipedModel<T>> extends MobRenderer<T, M> {
 
-   private static final ResourceLocation ENTITY_TEXTURES = new ResourceLocation("textures/entity/sample-chan.png");
+   private static ResourceLocation ENTITY_TEXTURES = new ResourceLocation("textures/entity/sample-chan.png");
 
    public PMM2_BipedRenderer(EntityRendererManager renderManagerIn, M modelBipedIn, float shadowSize, boolean setLayers) {
       super(renderManagerIn, modelBipedIn, shadowSize);
@@ -25,6 +25,16 @@ public class PMM2_BipedRenderer<T extends MobEntity, M extends PMM2_BipedModel<T
           super.addLayer(new ElytraLayer<T,M>(this));
           super.addLayer(new HeldItemLayer<T,M>(this));
       }
+   }
+
+   public PMM2_BipedRenderer(EntityRendererManager renderManagerIn, M modelBipedIn, String texturePath, float shadowSize, boolean setLayers) {
+      super(renderManagerIn, modelBipedIn, shadowSize);
+      if (setLayers) {
+          super.addLayer(new HeadLayer<T,M>(this));
+          super.addLayer(new ElytraLayer<T,M>(this));
+          super.addLayer(new HeldItemLayer<T,M>(this));
+      }
+      ENTITY_TEXTURES = new ResourceLocation("textures/entity/"+texturePath);
    }
 
    public PMM2_BipedRenderer(EntityRendererManager renderManagerIn, M modelBipedIn, M modelLeggings, M modelArmor, float shadowSize) {

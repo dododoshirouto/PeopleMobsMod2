@@ -128,7 +128,8 @@ public class PMM2_BipedArmorLayer<T extends Entity, M extends PMM2_BipedModel<T>
    public static <T extends Entity> void func_215338_a(Consumer<ResourceLocation> p_215338_0_, T p_215338_1_, EntityModel<T> p_215338_2_, float p_215338_3_, float p_215338_4_, float p_215338_5_, float p_215338_6_, float p_215338_7_, float p_215338_8_, float p_215338_9_) {
       float f = (float)p_215338_1_.ticksExisted + p_215338_5_;
       p_215338_0_.accept(ENCHANTED_ITEM_GLINT_RES);
-      GameRenderer gamerenderer = Minecraft.getInstance().gameRenderer;
+      @SuppressWarnings("resource")
+	GameRenderer gamerenderer = Minecraft.getInstance().gameRenderer;
       gamerenderer.setupFogColor(true);
       GlStateManager.enableBlend();
       GlStateManager.depthFunc(514);

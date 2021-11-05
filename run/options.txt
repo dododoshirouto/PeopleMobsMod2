@@ -22,7 +22,7 @@ gamma:1.0
 renderDistance:12
 guiScale:0
 particles:0
-maxFps:120
+maxFps:60
 difficulty:2
 fancyGraphics:true
 ao:2
@@ -31,7 +31,7 @@ renderClouds:true
 resourcePacks:[]
 incompatibleResourcePacks:[]
 lastServer:
-lang:en_us
+lang:ja_jp
 chatVisibility:0
 chatOpacity:1.0
 textBackgroundOpacity:0.5

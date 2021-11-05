@@ -40,6 +40,8 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         	System.out.println("fox is sleeping");
         	// 仮りのモーション
             this.setSittingAnimations();
+
+            this.bipedHead.rotateAngleX += (MathHelper.sin(this.ageInTicks)*15F + MathHelper.sin(this.ageInTicks*0.12F)*7F + 8F)*PMM2_Math.Deg2Rad;
         }
         else if (this.entityIn.isSitting()) {
 //        	System.out.println("fox is sitting");

@@ -77,6 +77,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
     public float boobHeight = 0.5F;
     public boolean childBoob = false;
     public boolean childHeadwear = false;
+    public boolean useChildModel = false;
 
     protected Map<Integer, Float> twinklesTimes = new HashMap<Integer, Float>();
     protected Map<Integer, Boolean> twinkledNow = new HashMap<Integer, Boolean>();
@@ -304,13 +305,13 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.setRotationAngles();
         GlStateManager.pushMatrix();
 
-        if (this.isChild)
+        if (this.isChild || this.useChildModel)
         {
-            this.bipedHeadwear.isHidden = !this.childHeadwear;
-            this.bipedLowerBoob.isHidden = !this.childBoob;
-            this.bipedUpperBoob.isHidden = !this.childBoob;
-            this.bipedLowerBoobwear.isHidden = !this.childBoob;
-            this.bipedUpperBoobwear.isHidden = !this.childBoob;
+            this.bipedHeadwear.isHidden = !this.childHeadwear && this.isChild;
+            this.bipedLowerBoob.isHidden = !this.childBoob && this.isChild;
+            this.bipedUpperBoob.isHidden = !this.childBoob && this.isChild;
+            this.bipedLowerBoobwear.isHidden = !this.childBoob && this.isChild;
+            this.bipedUpperBoobwear.isHidden = !this.childBoob && this.isChild;
 
             GlStateManager.translatef(0.0F, 1.5F * (1F-this.modelScale) +3F/16F, 0.0F);
             GlStateManager.scalef(0.75F * this.modelScale, 0.75F * this.modelScale, 0.75F * this.modelScale);
