@@ -903,7 +903,7 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedLeftLeg.rotateAngleX -= 80F * PMM2_Math.Deg2Rad;
         this.bipedHead.rotationPointY += 5F;
         this.bipedBody.rotationPointY += 5F;
-        this.bipedShippo.rotateAngleX += 1F;
+        this.bipedShippo.rotateAngleX += 3F;
     }
     
 

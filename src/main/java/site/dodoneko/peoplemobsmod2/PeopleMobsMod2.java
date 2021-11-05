@@ -67,7 +67,7 @@ public class PeopleMobsMod2
         this.register(SquidEntity.class, new PMM2_SquidRenderer<>(renderManager));
         this.register(FoxEntity.class, new PMM2_FoxRenderer<>(renderManager));
         
-        boolean DEBUG = true;
+        boolean DEBUG = false;
         if( !DEBUG ) return;
         
         this.register(SpiderEntity.class, new PMM2_SpiderRenderer<SpiderEntity>(renderManager));

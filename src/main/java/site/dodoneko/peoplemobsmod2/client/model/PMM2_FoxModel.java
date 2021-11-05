@@ -41,7 +41,7 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         	// 仮りのモーション
             this.setSittingAnimations();
 
-            this.bipedHead.rotateAngleX += (MathHelper.sin(this.ageInTicks)*15F + MathHelper.sin(this.ageInTicks*0.12F)*7F + 8F)*PMM2_Math.Deg2Rad;
+            this.bipedHead.rotateAngleX += ( MathHelper.abs( MathHelper.sin(this.ageInTicks * 0.2F ) )*15F + MathHelper.sin(this.ageInTicks*0.012F)*7F + 8F) *PMM2_Math.Deg2Rad;
         }
         else if (this.entityIn.isSitting()) {
 //        	System.out.println("fox is sitting");
@@ -50,18 +50,18 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
         else if (this.entityIn.func_213472_dX()) {
         	System.out.println("fox is Fitting on snow");
 
-            float fallingSpeed = 1F;
-            this.bipedLeftArm.rotateAngleZ  = -(80F - 30F*fallingSpeed) * PMM2_Math.Deg2Rad;
-            this.bipedRightArm.rotateAngleZ =  (80F - 30F*fallingSpeed) * PMM2_Math.Deg2Rad;
-            this.bipedLeftLeg.rotateAngleY = -fallingSpeed / 1.5F;
-            this.bipedLeftLeg.rotateAngleY =  fallingSpeed / 1.5F;
-            this.bipedLeftLeg.rotateAngleX  = fallingSpeed * 1.3F;
-            this.bipedRightLeg.rotateAngleX = fallingSpeed * 1.3F;
+            this.bipedLeftArm.rotateAngleZ  = -(80F - 30F) * PMM2_Math.Deg2Rad;
+            this.bipedRightArm.rotateAngleZ =  (80F - 30F) * PMM2_Math.Deg2Rad;
+            this.bipedLeftLeg.rotateAngleY = -1 / 1.5F;
+            this.bipedLeftLeg.rotateAngleY =  1 / 1.5F;
+            this.bipedLeftLeg.rotateAngleX  = 1 * 1.3F;
+            this.bipedRightLeg.rotateAngleX = 1 * 1.3F;
             
-            float moveYRate = PMM2_Math.clamp( 1F - ((float)this.entityMotion.y + 0.5F) / (0.5F + 0.5F) , 0, 1);
+            this.bipedBody.rotateAngleX += 150F * PMM2_Math.Deg2Rad;
+            this.bipedHead.rotateAngleX += 150F * PMM2_Math.Deg2Rad;
             
-            this.bipedBody.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
-            this.bipedHead.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
+            this.bipedHead.rotationPointY += 24F;
+            this.bipedBody.rotationPointY += 24F;
         }
         else if (this.entityIn.func_213480_dY()) {
         	System.out.println("fox is jumping");
@@ -77,8 +77,8 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
             
             float moveYRate = PMM2_Math.clamp( 1F - ((float)this.entityMotion.y + 0.5F) / (0.5F + 0.5F) , 0, 1);
             
-            this.bipedBody.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
-            this.bipedHead.rotateAngleX += PMM2_Math.lerp(0, 180F * PMM2_Math.Deg2Rad, moveYRate );
+            this.bipedBody.rotateAngleX += PMM2_Math.lerp(0, 150F * PMM2_Math.Deg2Rad, moveYRate );
+            this.bipedHead.rotateAngleX += PMM2_Math.lerp(0, 150F * PMM2_Math.Deg2Rad, moveYRate );
         }
         else if (this.entityIn.func_213490_ee()) {
 //        	System.out.println("fox is jumping ?");
@@ -92,7 +92,7 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
     }
 
     @Override
-    public boolean setPreAnimations() {
+    public void setPostAnimations() {
         if (this.entityIn.isCrouching() && this.entityIn.onGround) {
             // かがんで地面のにおいを追跡
             this.bipedLeftEyelid.rotationPointZ = this.bipedRightEyelid.rotationPointZ = 0F;
@@ -115,6 +115,6 @@ public class PMM2_FoxModel<T extends FoxEntity> extends PMM2_BipedModel<T>
             this.bipedBody.rotateAngleY = MathHelper.sin(this.ageInTicks*1F) * 0.42F;
         }
         
-        return false;
+//        return false;
     }
 }
