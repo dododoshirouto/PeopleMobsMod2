@@ -1,6 +1,7 @@
 # People Mobs Mod2
 
 for Minecraft 1.14.4 (Forge 28.2.0)
+![スクリーンショット 2021-11-06 052408](https://user-images.githubusercontent.com/87510462/140574075-156d4aca-a130-40f1-ad57-182b6e156c31.png)
 
 ## ↓↓ 導入方法 ↓↓
 
