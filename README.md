@@ -48,3 +48,9 @@ When I complete this mod, **we can live with cute girls**.
 [![Image from Gyazo](https://i.gyazo.com/91e835f1813aa62570048a32f6f00df0.png)](https://gyazo.com/91e835f1813aa62570048a32f6f00df0)
 
 以前作った**[Personification Mobs Mod](http://www.9minecraft.net/people-mobs-mod/)**の後継版です。(フォーラムのページが消えたのでコピーサイトのリンクです ;_;)
+
+# Forum Link
+
+[People Mobs Mod2 - Minecraft Mods - Mapping and Modding: Java Edition - Minecraft Forum - Minecraft Forum](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/3126640-people-mobs-mod2)
+
+[People Mobs Mod2 - Mods - Minecraft - CurseForge](https://www.curseforge.com/minecraft/mc-mods/people-mobs-mod2/)
