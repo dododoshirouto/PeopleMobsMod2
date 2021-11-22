@@ -872,15 +872,6 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
     
     
     
-    /**
-     *  this animation do only setting pose.
-     */
-    protected void setSittingAnimatinos()
-    {
-    	
-    }
-    
-    
     
     
     // アニメーションプリセット
@@ -906,8 +897,37 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this.bipedShippo.rotateAngleX += 3F;
     }
     
+    
+    protected void setOnLadderAnimations() {
+        this.bipedRightArm.rotateAngleY = 0.5F;
+        this.bipedLeftArm .rotateAngleY = -0.5F;
+        this.bipedRightArm.rotateAngleX = MathHelper.cos(this.ageInTicks * 1.3324F + (float)Math.PI) * 1.5F * 0.5F;
+        this.bipedLeftArm .rotateAngleX = MathHelper.cos(this.ageInTicks * 1.3324F) * 1.5F * 0.5F;
+        this.bipedRightArm.rotateAngleZ = 0.3F;
+        this.bipedLeftArm .rotateAngleZ = -0.3F;
+        this.bipedRightLeg.rotateAngleZ =  0.075F;
+        this.bipedLeftLeg .rotateAngleZ = -0.075F;
+        this.bipedRightLeg.rotateAngleY =  0.15F;
+        this.bipedLeftLeg .rotateAngleY = -0.15F;
+        this.bipedRightLeg.rotateAngleX = MathHelper.cos(this.ageInTicks * 1.3324F) * 1.4F;
+        this.bipedLeftLeg .rotateAngleX = MathHelper.cos(this.ageInTicks * 1.3324F + (float)Math.PI) * 1.4F;
+        this.bipedRightLeg.rotationPointZ = MathHelper.sin(this.ageInTicks * 1.3324F) * 1F + 1F;
+        this.bipedLeftLeg .rotationPointZ = MathHelper.sin(this.ageInTicks * 1.3324F + (float)Math.PI) * 1F + 1F;
+        
+        this.bipedRightArm.rotateAngleX -= 90F * PMM2_Math.Deg2Rad;
+        this.bipedLeftArm.rotateAngleX -= 90F * PMM2_Math.Deg2Rad;
+        this.bipedRightLeg.rotateAngleX -= 45F * PMM2_Math.Deg2Rad;
+        this.bipedLeftLeg.rotateAngleX -= 45F * PMM2_Math.Deg2Rad;
+    }
+    
 
 
+    
+    
+    
+    
+    
+    
 
 
     @Override

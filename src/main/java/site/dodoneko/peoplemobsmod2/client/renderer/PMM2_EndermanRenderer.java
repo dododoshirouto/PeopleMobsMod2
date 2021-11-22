@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.util.ResourceLocation;
-import site.dodoneko.peoplemobsmod2.client.layers.PMM2_EndermanEyesLayer;
+import site.dodoneko.peoplemobsmod2.client.layers.PMM2_EntityEyesLayer;
 import site.dodoneko.peoplemobsmod2.client.layers.PMM2_HeldBlockLayer;
 import site.dodoneko.peoplemobsmod2.client.model.PMM2_EndermanModel;
 
@@ -19,7 +19,7 @@ public class PMM2_EndermanRenderer<T extends EndermanEntity> extends PMM2_BipedR
     @SuppressWarnings ({ "rawtypes", "unchecked" })
     public PMM2_EndermanRenderer(EntityRendererManager renderManager) {
         super(renderManager, new PMM2_EndermanModel<T>(0.0f), 0.5F, false);
-        this.addLayer(new PMM2_EndermanEyesLayer<>(this));
+        this.addLayer(new PMM2_EntityEyesLayer<>(this));
         this.addLayer(new PMM2_HeldBlockLayer(this));
     }
 

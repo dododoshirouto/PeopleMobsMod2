@@ -1,10 +1,10 @@
 package site.dodoneko.peoplemobsmod2.client.renderer;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.monster.CaveSpiderEntity;
 import net.minecraft.util.ResourceLocation;
 
-public class PMM2_CaveSpiderRenderer<T extends MobEntity> extends PMM2_SpiderRenderer<T>
+public class PMM2_CaveSpiderRenderer<T extends CaveSpiderEntity> extends PMM2_SpiderRenderer<T>
 {
     private static final ResourceLocation ENTITY_TEXTURES = new ResourceLocation("textures/entity/spider/cave_spider-chan.png");
 
