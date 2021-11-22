@@ -1,7 +1,11 @@
 # People Mobs Mod2
 
 for Minecraft 1.14.4 (Forge 28.2.0)
-![スクリーンショット 2021-11-06 052408](https://user-images.githubusercontent.com/87510462/140574075-156d4aca-a130-40f1-ad57-182b6e156c31.png)
+
+![banner-0 1 4](https://user-images.githubusercontent.com/87510462/140615386-58e2dd30-8b61-4ab5-a64e-231b4fea03aa.png)
+
+![main-banner](https://user-images.githubusercontent.com/87510462/140615380-bfba3cff-98b1-4d00-affc-90c9b183d081.png)
+
 
 ## ↓↓ 導入方法 ↓↓
 
@@ -44,3 +48,9 @@ When I complete this mod, **we can live with cute girls**.
 [![Image from Gyazo](https://i.gyazo.com/91e835f1813aa62570048a32f6f00df0.png)](https://gyazo.com/91e835f1813aa62570048a32f6f00df0)
 
 以前作った**[Personification Mobs Mod](http://www.9minecraft.net/people-mobs-mod/)**の後継版です。(フォーラムのページが消えたのでコピーサイトのリンクです ;_;)
+
+# Forum Link
+
+[People Mobs Mod2 - Minecraft Mods - Mapping and Modding: Java Edition - Minecraft Forum - Minecraft Forum](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/3126640-people-mobs-mod2)
+
+[People Mobs Mod2 - Mods - Minecraft - CurseForge](https://www.curseforge.com/minecraft/mc-mods/people-mobs-mod2/)
