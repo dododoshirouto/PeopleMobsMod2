@@ -24,6 +24,9 @@ package site.dodoneko.peoplemobsmod2;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -34,6 +37,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 import site.dodoneko.peoplemobsmod2.client.renderer.*;
 
 import com.google.common.collect.Maps;
@@ -41,6 +45,8 @@ import com.google.common.collect.Maps;
 @Mod("peoplemobsmod2")
 public class PeopleMobsMod2
 {
+	public static final Logger LOGGER = LogManager.getLogger();
+	
     public PeopleMobsMod2() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
@@ -67,13 +73,13 @@ public class PeopleMobsMod2
         this.register(SquidEntity.class, new PMM2_SquidRenderer<>(renderManager));
         this.register(FoxEntity.class, new PMM2_FoxRenderer<>(renderManager));
         
-        boolean DEBUG = false;
+        boolean DEBUG = true;
         if( !DEBUG ) return;
         
-        this.register(SpiderEntity.class, new PMM2_SpiderRenderer<SpiderEntity>(renderManager));
-        this.register(CaveSpiderEntity.class, new PMM2_CaveSpiderRenderer<CaveSpiderEntity>(renderManager));
-        this.register(CowEntity.class, new PMM2_CowRenderer<CowEntity>(renderManager));
-        this.register(PigEntity.class, new PMM2_PigRenderer<PigEntity>(renderManager));
+        this.register(SpiderEntity.class, new PMM2_SpiderRenderer<>(renderManager));
+        this.register(CaveSpiderEntity.class, new PMM2_CaveSpiderRenderer<>(renderManager));
+        this.register(CowEntity.class, new PMM2_CowRenderer<>(renderManager));
+        this.register(PigEntity.class, new PMM2_PigRenderer<>(renderManager));
     }
 
 

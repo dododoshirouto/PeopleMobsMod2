@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.4'
+version = '0.1.5-test.01'
 group = 'site.dodoneko.peoplemobsmod2' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'peoplemobsmod2'
 
@@ -113,14 +113,15 @@ dependencies {
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
+	compileJava { options.encoding = 'UTF-8' }
     manifest {
         attributes([
             "Specification-Title": "People Mobs Mod2",
-            "Specification-Vendor": "�ǂǂǑf�l",
+            "Specification-Vendor": "どどど素人",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Vendor" :"どどど素人",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
