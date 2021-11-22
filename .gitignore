@@ -25,4 +25,6 @@ hs_err_pid*
 
 *
 !/src/*
+!/run/
+/run/*
 !/run/screenshots/
