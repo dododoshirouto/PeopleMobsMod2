@@ -2,34 +2,35 @@ package site.dodoneko.peoplemobsmod2.client.layers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import site.dodoneko.peoplemobsmod2.client.model.PMM2_BipedModel;
-import site.dodoneko.peoplemobsmod2.client.model.PMM2_EndermanModel;
 import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_BipedRenderer;
-import site.dodoneko.peoplemobsmod2.client.renderer.PMM2_EndermanRenderer;
 
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 
 @OnlyIn(Dist.CLIENT)
 public class PMM2_EntityEyesLayer<T extends MobEntity, M extends PMM2_BipedModel<T>, R extends PMM2_BipedRenderer<T, M>> extends LayerRenderer<T, M> {
-	private static final ResourceLocation RES_ENDERMAN_EYES = new ResourceLocation("textures/entity/enderman/enderman-chan_eyes.png");
-	private R renderer;
+	protected R renderer;
 
-	public PMM2_EntityEyesLayer(IEntityRenderer<T, M> p_i50939_1_) {
-		super(p_i50939_1_);
-		renderer = (R) p_i50939_1_;
+	public PMM2_EntityEyesLayer(R renderer) {
+		super(renderer);
+		renderer = (R) renderer;
+	}
+	
+	private static final ResourceLocation ENTITY_EYES_TEXTURE = new ResourceLocation("textures/entity/sample-map.png");
+	protected ResourceLocation GET_EYES_TEXTURE() {
+		return ENTITY_EYES_TEXTURE;
 	}
 
-	public void render(T entityIn, float p_212842_2_, float p_212842_3_, float p_212842_4_, float p_212842_5_, float p_212842_6_, float p_212842_7_, float p_212842_8_)
+	public void render(T entityIn, float limbSwing, float limbSwingAmount, float p_212842_4_, float p_212842_5_, float p_212842_6_, float p_212842_7_, float p_212842_8_)
 	{
-		this.renderer.bindTexture(RES_ENDERMAN_EYES);
+		this.renderer.bindTexture(GET_EYES_TEXTURE());
 		GlStateManager.enableBlend();
 		GlStateManager.disableAlphaTest();
 		GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
@@ -43,7 +44,14 @@ public class PMM2_EntityEyesLayer<T extends MobEntity, M extends PMM2_BipedModel
 		M model = renderer.getEntityModel();
 
 		GlStateManager.pushMatrix();
-		if (model.isChild)
+
+        limbSwing *= model.walkSpeed + ((model.isChild || model.useChildModel)? 0.2F: 0.0F);
+        if (model.doWalkBounding)
+        {
+            GlStateManager.translatef(0.0F, MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * model.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * ((model.isChild || model.useChildModel)? 0.5F: 1F), 0.0F);
+        }
+        
+		if (model.isChild || model.useChildModel)
 		{
 			model.bipedHeadwear.isHidden = true;
 			model.bipedLowerBoob.isHidden = true;

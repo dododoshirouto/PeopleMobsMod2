@@ -296,10 +296,10 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
 
 
 
-        limbSwing *= this.walkSpeed + (this.isChild? 0.2F: 0.0F);
+        limbSwing *= this.walkSpeed + ((this.isChild || this.useChildModel)? 0.2F: 0.0F);
         if (this.doWalkBounding)
         {
-            GlStateManager.translatef(0.0F, MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * this.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * (this.isChild? 0.5F: 1F), 0.0F);
+            GlStateManager.translatef(0.0F, MathHelper.abs(MathHelper.cos(limbSwing * 1.3314F)) * limbSwingAmount * this.modelScale * 0.0625F * 4 - 0.0625F * 2 * limbSwingAmount * ((this.isChild || this.useChildModel)? 0.5F: 1F), 0.0F);
         }
 //        scale *= this.modelScale;
         this.setRotationAngles();

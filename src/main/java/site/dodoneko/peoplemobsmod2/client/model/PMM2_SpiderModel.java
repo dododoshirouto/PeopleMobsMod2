@@ -4,7 +4,6 @@
 package site.dodoneko.peoplemobsmod2.client.model;
 
 import net.minecraft.entity.monster.SpiderEntity;
-import site.dodoneko.peoplemobsmod2.PeopleMobsMod2;
 
 /**
  * @author DODONEKO
@@ -30,7 +29,6 @@ public class PMM2_SpiderModel<T extends SpiderEntity> extends PMM2_BipedModel<T>
         
     	if (this.isOnLadder) {
     		this.setOnLadderAnimations();
-    		PeopleMobsMod2.LOGGER.debug("isOnLadder");
     	}
     	
     	this.bipedHead.rotationPointY -= 4f;
