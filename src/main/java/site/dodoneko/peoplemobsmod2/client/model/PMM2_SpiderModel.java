@@ -31,7 +31,7 @@ public class PMM2_SpiderModel<T extends SpiderEntity> extends PMM2_BipedModel<T>
     		this.setOnLadderAnimations();
     	}
     	
-    	this.bipedHead.rotationPointY -= 4f;
-    	this.bipedBody.rotationPointY -= 4f;
+    	// this.bipedHead.rotationPointY -= 4f;
+    	// this.bipedBody.rotationPointY -= 4f;
     }
 }
