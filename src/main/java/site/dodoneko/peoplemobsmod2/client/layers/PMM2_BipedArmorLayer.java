@@ -163,7 +163,7 @@ public class PMM2_BipedArmorLayer<T extends Entity, M extends PMM2_BipedModel<T>
       gamerenderer.setupFogColor(false);
    }
 
-   @SuppressWarnings ("unused")
+   // @SuppressWarnings ("unused")
    @Deprecated //Use the more sensitive version getArmorResource below
    private ResourceLocation getArmorResource(ArmorItem armor, boolean p_177181_2_) {
       return this.getArmorResource(armor, p_177181_2_, (String)null);

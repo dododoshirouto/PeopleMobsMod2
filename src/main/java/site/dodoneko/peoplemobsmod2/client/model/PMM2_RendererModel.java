@@ -232,7 +232,7 @@ public class PMM2_RendererModel extends RendererModel
                 GlStateManager.popMatrix();
 
 //                this.renderMap.get(entityHash).set(this).changedTime = Util.milliTime();
-                // TODO: if changedTime + 1min > SystemTime -> removed from renderMap.
+                // TODO: #15 if changedTime + 1min > SystemTime -> removed from renderMap.
         }
     }
 
