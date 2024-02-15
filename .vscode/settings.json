@@ -1,7 +1,24 @@
 {
     "cSpell.words": [
+        "ahoge",
+        "Armwear",
+        "blockstate",
+        "Bodywear",
         "dodoneko",
         "Enderman",
-        "peoplemobsmod"
-    ]
+        "enumhandside",
+        "handside",
+        "Headwear",
+        "itemstack",
+        "kemomimi",
+        "Kemomimi",
+        "Legwear",
+        "modelbiped",
+        "modelrenderer",
+        "Mooshroom",
+        "peoplemobsmod",
+        "shippo",
+        "Shippo"
+    ],
+    "cmake.configureOnOpen": false
 }

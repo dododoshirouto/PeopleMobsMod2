@@ -60,10 +60,10 @@ public class PMM2_FoxHeldItemLayer<T extends FoxEntity> extends LayerRenderer < 
             GlStateManager.rotatef( 90F, 1.0F, 0.0F, 0.0F);
             
             GlStateManager.translatef(
-            		(0F)*pixelToScale,
-            		(-2F)*pixelToScale,
-            		(-8.5F)*pixelToScale
-            		);
+                (0F)*pixelToScale,
+                (-2F)*pixelToScale,
+                (-8.5F)*pixelToScale
+            );
 
             float f = 0.5F;
             GlStateManager.scalef(-f, -f, f);
