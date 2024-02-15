@@ -79,8 +79,9 @@ public class PeopleMobsMod2
         this.register(SpiderEntity.class, new PMM2_SpiderRenderer<>(renderManager));
         this.register(CaveSpiderEntity.class, new PMM2_CaveSpiderRenderer<>(renderManager));
         this.register(CowEntity.class, new PMM2_CowRenderer<>(renderManager));
-        this.register(PigEntity.class, new PMM2_PigRenderer<>(renderManager));
         this.register(MooshroomEntity.class, new PMM2_MooshroomRenderer<>(renderManager));
+        this.register(PigEntity.class, new PMM2_PigRenderer<>(renderManager));
+        this.register(SheepEntity.class, new PMM2_SheepRenderer<>(renderManager));
     }
 
 
