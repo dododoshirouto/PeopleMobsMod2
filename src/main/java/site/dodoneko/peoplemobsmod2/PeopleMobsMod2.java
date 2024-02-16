@@ -82,7 +82,7 @@ public class PeopleMobsMod2
         this.register(PigEntity.class, new PMM2_PigRenderer<>(renderManager));
         this.register(SheepEntity.class, new PMM2_SheepRenderer<>(renderManager));
 
-        boolean DEBUG = true;
+        boolean DEBUG = false;
         if( !DEBUG ) return;
     }
 
