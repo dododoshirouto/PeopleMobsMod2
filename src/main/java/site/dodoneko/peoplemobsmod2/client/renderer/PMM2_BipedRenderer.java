@@ -28,6 +28,13 @@ public class PMM2_BipedRenderer<T extends MobEntity, M extends PMM2_BipedModel<T
       }
    }
 
+   public PMM2_BipedRenderer(EntityRendererManager renderManagerIn, M modelBipedIn, float shadowSize, float modelScale, float boobHeight, String texturePath) {
+      super(renderManagerIn, modelBipedIn, shadowSize);
+      ENTITY_TEXTURES = new ResourceLocation(texturePath);
+      modelBipedIn.boobHeight = boobHeight;
+      modelBipedIn.modelScale = modelScale;
+   }
+
    public PMM2_BipedRenderer(EntityRendererManager renderManagerIn, M modelBipedIn, String texturePath,
          float shadowSize, boolean setLayers) {
       super(renderManagerIn, modelBipedIn, shadowSize);

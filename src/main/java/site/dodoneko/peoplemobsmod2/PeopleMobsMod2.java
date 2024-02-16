@@ -37,7 +37,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
+import site.dodoneko.peoplemobsmod2.client.model.PMM2_BipedModel;
 import site.dodoneko.peoplemobsmod2.client.renderer.*;
 
 import com.google.common.collect.Maps;
@@ -82,8 +82,14 @@ public class PeopleMobsMod2
         this.register(PigEntity.class, new PMM2_PigRenderer<>(renderManager));
         this.register(SheepEntity.class, new PMM2_SheepRenderer<>(renderManager));
 
-        boolean DEBUG = false;
+        boolean DEBUG = true;
         if( !DEBUG ) return;
+
+        this.register(DolphinEntity.class, new PMM2_DolphinRenderer<DolphinEntity>(renderManager));
+        this.register(SnowGolemEntity.class, new PMM2_SnowGolemRenderer<SnowGolemEntity>(renderManager));
+        this.register(IronGolemEntity.class, new PMM2_IronGolemRenderer<IronGolemEntity>(renderManager));
+        this.register(SilverfishEntity.class, new PMM2_SilverfishRenderer<SilverfishEntity>(renderManager));
+        this.register(EndermiteEntity.class, new PMM2_EndermiteRenderer<EndermiteEntity>(renderManager));
     }
 
 

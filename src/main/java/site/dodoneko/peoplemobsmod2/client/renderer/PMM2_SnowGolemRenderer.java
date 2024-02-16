@@ -5,15 +5,15 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.util.ResourceLocation;
 import site.dodoneko.peoplemobsmod2.client.model.PMM2_BipedModel;
 
-public class PMM2_SampleRenderer<T extends MobEntity> extends PMM2_BipedRenderer<T, PMM2_BipedModel<T>>
+public class PMM2_SnowGolemRenderer<T extends MobEntity> extends PMM2_BipedRenderer<T, PMM2_BipedModel<T>>
 {
-    private static ResourceLocation ENTITY_TEXTURES = new ResourceLocation("textures/entity/sample-chan.png");
+    private static ResourceLocation ENTITY_TEXTURES = new ResourceLocation("textures/entity/snow_golem-chan.png");
 
-    public PMM2_SampleRenderer(EntityRendererManager renderManager) {
+    public PMM2_SnowGolemRenderer(EntityRendererManager renderManager) {
         super(renderManager, new PMM2_BipedModel<T>(0.0f), 0.5F, false);
         PMM2_BipedModel<T> model = this.getEntityModel();
         model.boobHeight = 0.8F;
-        model.modelScale = 0.5F;
+        model.modelScale = 0.8F;
     }
 
 

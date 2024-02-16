@@ -109,6 +109,11 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
         this(modelSize, 0.0F, 64, 64);
     }
 
+    public PMM2_BipedModel(boolean useChildModel) {
+        this(0.0F, 0.0F, 64, 64);
+        this.useChildModel = useChildModel;
+    }
+
     @SuppressWarnings("unchecked")
     public PMM2_BipedModel(float modelSize, float addScale, int textureWidthIn, int textureHeightIn) {
         this.textureWidth = textureWidthIn;
