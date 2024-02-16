@@ -63,6 +63,7 @@ public class PeopleMobsMod2
 
 
     public void setEntityList(EntityRendererManager renderManager) {
+        // older 0.1.4
         this.register(CreeperEntity.class, new PMM2_CreeperRenderer<>(renderManager));
         this.register(ZombieEntity.class, new PMM2_ZombieRenderer<>(renderManager));
         this.register(SkeletonEntity.class, new PMM2_SkeletonRenderer<>(renderManager));
@@ -73,15 +74,16 @@ public class PeopleMobsMod2
         this.register(SquidEntity.class, new PMM2_SquidRenderer<>(renderManager));
         this.register(FoxEntity.class, new PMM2_FoxRenderer<>(renderManager));
         
-        boolean DEBUG = true;
-        if( !DEBUG ) return;
-        
+        // 0.1.5
         this.register(SpiderEntity.class, new PMM2_SpiderRenderer<>(renderManager));
         this.register(CaveSpiderEntity.class, new PMM2_CaveSpiderRenderer<>(renderManager));
         this.register(CowEntity.class, new PMM2_CowRenderer<>(renderManager));
         this.register(MooshroomEntity.class, new PMM2_MooshroomRenderer<>(renderManager));
         this.register(PigEntity.class, new PMM2_PigRenderer<>(renderManager));
         this.register(SheepEntity.class, new PMM2_SheepRenderer<>(renderManager));
+
+        boolean DEBUG = true;
+        if( !DEBUG ) return;
     }
 
 
