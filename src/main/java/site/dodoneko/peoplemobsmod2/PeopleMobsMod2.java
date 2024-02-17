@@ -90,6 +90,8 @@ public class PeopleMobsMod2
         this.register(IronGolemEntity.class, new PMM2_IronGolemRenderer<IronGolemEntity>(renderManager));
         this.register(SilverfishEntity.class, new PMM2_SilverfishRenderer<SilverfishEntity>(renderManager));
         this.register(EndermiteEntity.class, new PMM2_EndermiteRenderer<EndermiteEntity>(renderManager));
+
+        this.register(RabbitEntity.class, new PMM2_RabbitRenderer<RabbitEntity>(renderManager));
     }
 
 
