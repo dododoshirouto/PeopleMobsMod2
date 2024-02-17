@@ -1,7 +1,7 @@
 package site.dodoneko.peoplemobsmod2.client.renderer;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.IEntityRenderer;
+import net.minecraft.client.renderer.entity.SheepRenderer;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.util.ResourceLocation;
 import site.dodoneko.peoplemobsmod2.client.layers.PMM2_SheepWoolLayer;

@@ -13,12 +13,14 @@ import site.dodoneko.peoplemobsmod2.client.model.PMM2_SheepModel;
 @OnlyIn(Dist.CLIENT)
 public class PMM2_SheepWoolLayer<T extends SheepEntity> extends LayerRenderer<T, PMM2_SheepModel<T>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/sheep/sheep-chan_fur.png");
-    private final PMM2_SheepModel<T> sheepModel = new PMM2_SheepModel<T>();
+    private final PMM2_SheepModel<T> woolModel = new PMM2_SheepModel<T>();
 
     public PMM2_SheepWoolLayer(IEntityRenderer<T, PMM2_SheepModel<T>> p_i50925_1_) {
         super(p_i50925_1_);
-        sheepModel.isFar = true;
-        sheepModel.bodyModel = this.getEntityModel();
+        woolModel.isFar = true;
+        woolModel.bodyModel = p_i50925_1_.getEntityModel();
+        woolModel.doWalkBounding = false;
+        woolModel.easeMotion = false;
     }
 
     public void render(T entityIn, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks,
@@ -41,10 +43,10 @@ public class PMM2_SheepWoolLayer<T extends SheepEntity> extends LayerRenderer<T,
                 GlStateManager.color3f(afloat[0], afloat[1], afloat[2]);
             }
 
-            this.sheepModel.entityIn = entityIn;
-            this.getEntityModel().setModelAttributes(this.sheepModel);
-            this.sheepModel.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
-            this.sheepModel.render(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.woolModel.entityIn = entityIn;
+            this.getEntityModel().setModelAttributes(this.woolModel);
+            // this.sheepModel.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
+            this.woolModel.render(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         }
     }
 

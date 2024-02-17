@@ -32,6 +32,8 @@ import com.mojang.blaze3d.platform.GlStateManager;
  */
 public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements IHasArm, IHasHead {
 
+    public boolean easeMotion = true;
+
     public PMM2_RendererModel bipedHead;
     public PMM2_RendererModel bipedBody;
     public PMM2_RendererModel bipedRightArm;
@@ -306,13 +308,13 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
             GlStateManager.translatef(0.0F, 1.5F * (1F - this.modelScale) + 3F / 16F, 0.0F);
             GlStateManager.scalef(0.75F * this.modelScale, 0.75F * this.modelScale, 0.75F * this.modelScale);
             GlStateManager.translatef(0.0F, 16.0F * this.scaleFactor * this.modelScale, 0.0F);
-            this.bipedHead.render(this.scaleFactor, this.entityIn.hashCode());
+            this.bipedHead.render(this.scaleFactor, this.entityIn.hashCode(), this.easeMotion);
             GlStateManager.popMatrix();
             GlStateManager.pushMatrix();
             GlStateManager.translatef(0.0F, 1.5F * (1F - this.modelScale) + 3F / 16F, 0.0F);
             GlStateManager.scalef(0.5F * this.modelScale, 0.5F * this.modelScale, 0.5F * this.modelScale);
             GlStateManager.translatef(0.0F, 24.0F * this.scaleFactor * this.modelScale, 0.0F);
-            this.bipedBody.render(this.scaleFactor, this.entityIn.hashCode());
+            this.bipedBody.render(this.scaleFactor, this.entityIn.hashCode(), this.easeMotion);
         } else {
             GlStateManager.translatef(0.0F, -1.5F * this.modelScale + 1.5F, 0.0F);
             GlStateManager.scalef(this.modelScale, this.modelScale, this.modelScale);
@@ -338,8 +340,8 @@ public class PMM2_BipedModel<T extends Entity> extends EntityModel<T> implements
                 this.bipedUpperBoobwear.isHidden = true;
             }
 
-            this.bipedHead.render(this.scaleFactor, this.entityId);
-            this.bipedBody.render(this.scaleFactor, this.entityId);
+            this.bipedHead.render(this.scaleFactor, this.entityId, this.easeMotion);
+            this.bipedBody.render(this.scaleFactor, this.entityId, this.easeMotion);
         }
         GlStateManager.popMatrix();
     }

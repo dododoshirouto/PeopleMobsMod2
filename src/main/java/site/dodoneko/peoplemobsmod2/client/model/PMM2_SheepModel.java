@@ -3,6 +3,8 @@
  */
 package site.dodoneko.peoplemobsmod2.client.model;
 
+import javax.annotation.OverridingMethodsMustInvokeSuper;
+
 import net.minecraft.entity.passive.SheepEntity;
 
 /**
@@ -21,11 +23,22 @@ public class PMM2_SheepModel<T extends SheepEntity> extends PMM2_BipedModel<T>
         this.boobHeight = 0.63F;
     }
 
-    public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick)
-    {
-        if (entityIn.getHeadRotationPointY(partialTick) > 0) {
-            this.isSneak = true;
-        }
-        super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
+    // @Override
+    // public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick)
+    // {
+    //     if (entityIn.getHeadRotationPointY(partialTick) != 0F) {
+    //         this.isSneak = true;
+    //     }
+    //     super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
+    // }
+
+    @Override
+    protected boolean setPreAnimations() {
+            if (this.isFar) {
+                bodyModel.CopyAll(this);
+                return true;
+            }
+
+            return false;
     }
 }
