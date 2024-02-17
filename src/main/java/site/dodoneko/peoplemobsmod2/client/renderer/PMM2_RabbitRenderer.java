@@ -12,19 +12,19 @@ public class PMM2_RabbitRenderer<T extends MobEntity> extends PMM2_BipedRenderer
     private static final ResourceLocation BROWN = new ResourceLocation("textures/entity/rabbit/brown-chan.png");
     private static final ResourceLocation BLACK = new ResourceLocation("textures/entity/rabbit/black-chan.png");
 
-    private static final ResourceLocation WHITE = new ResourceLocation("textures/entity/rabbit/black-chan.png");
-    private static final ResourceLocation GOLD = new ResourceLocation("textures/entity/rabbit/black-chan.png");
-    private static final ResourceLocation SALT = new ResourceLocation("textures/entity/rabbit/black-chan.png");
+    private static final ResourceLocation WHITE = new ResourceLocation("textures/entity/rabbit/white-chan.png");
+    private static final ResourceLocation GOLD = new ResourceLocation("textures/entity/rabbit/gold-chan.png");
+    private static final ResourceLocation SALT = new ResourceLocation("textures/entity/rabbit/salt-chan.png");
     private static final ResourceLocation WHITE_SPLOTCHED = new ResourceLocation(
-            "textures/entity/rabbit/black-chan.png");
-    private static final ResourceLocation TOAST = new ResourceLocation("textures/entity/rabbit/black-chan.png");
-    private static final ResourceLocation CAERBANNOG = new ResourceLocation("textures/entity/rabbit/black-chan.png");
+            "textures/entity/rabbit/white_splotched-chan.png");
+    private static final ResourceLocation TOAST = new ResourceLocation("textures/entity/rabbit/toast-chan.png");
+    private static final ResourceLocation CAERBANNOG = new ResourceLocation("textures/entity/rabbit/caerbannog-chan.png");
 
     public PMM2_RabbitRenderer(EntityRendererManager renderManager) {
-        super(renderManager, new PMM2_BipedModel<T>(0.0f), 0.5F, false);
+        super(renderManager, new PMM2_BipedModel<T>(0.0f), 0.4F, false);
         PMM2_BipedModel<T> model = this.getEntityModel();
-        model.boobHeight = 0.8F;
-        model.modelScale = 0.5F;
+        model.boobHeight = 0.67F;
+        model.modelScale = 0.4F;
     }
 
     protected ResourceLocation getEntityTexture(T entity) {

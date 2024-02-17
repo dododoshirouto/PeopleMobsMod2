@@ -25,6 +25,8 @@ for Minecraft 1.14.4 (Forge 28.2.0)
 
 ## About
 
+[![Video ver 0.1.6 pre](https://img.youtube.com/vi/j9aCEPiPEXI/0.jpg)](https://www.youtube.com/watch?v=j9aCEPiPEXI)
+
 https://user-images.githubusercontent.com/87510462/140570259-b50abc6e-fab0-4419-b6c7-4c0ab34875c6.mp4
 
 [![Video ver 0.1.3+α](https://img.youtube.com/vi/FYLCwDNG7ho/0.jpg)](https://www.youtube.com/watch?v=FYLCwDNG7ho)
