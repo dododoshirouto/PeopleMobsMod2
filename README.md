@@ -1,6 +1,6 @@
 # People Mobs Mod2
 
-[Minecraft 1.20.2版 開発中です！](https://github.com/dododoshirouto/PeopleMobMods2-1.20.2)
+[Minecraft 1.20.2版 開発中です！](https://github.com/dododoshirouto/PeopleMobsMod2-1.20.2)
 
 for Minecraft 1.14.4 (Forge 28.2.0)
 
